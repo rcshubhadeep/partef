@@ -33,7 +33,7 @@ func main() {
 		if c.NArg() > 0 {
 			fileName = c.Args()[0]
 		}
-		if jsonFile.FileExists(fileName) == false {
+		if !jsonFile.FileExists(fileName) {
 			fmt.Println("File does not exists")
 			return nil
 		}
