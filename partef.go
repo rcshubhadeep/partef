@@ -26,7 +26,7 @@ func main() {
 	app.Name = "partef"
 	app.Usage = "Load testing of any REST API."
 	app.Version = "0.1"
-	app.UsageText = "partef [global options] <filename.json>"
+	app.UsageText = "partef [global options] <filename/with/path.json>"
 
 	app.Action = func(c *cli.Context) error {
 		fileName := "api.json"
