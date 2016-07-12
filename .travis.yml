@@ -10,6 +10,7 @@ matrix:
 
 before_install:
   - mkdir -p bin
+  - go get github.com/partef
 
 script:
   - go build
