@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/partef/jsonfile"
+	"github.com/rcshubhadeep/partef/jsonfile"
 
 	"github.com/urfave/cli"
 )

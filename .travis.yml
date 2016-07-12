@@ -12,5 +12,4 @@ before_install:
   - mkdir -p bin
 
 script:
-  - go get github.com/partef
   - go build
