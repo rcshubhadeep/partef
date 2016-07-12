@@ -26,14 +26,14 @@ func main() {
 	app.Name = "partef"
 	app.Usage = "Load testing of any REST API."
 	app.Version = "0.1"
-	app.UsageText = "partef [global options] <filename/with/path.json>"
+	app.UsageText = "partef [global options] <filename.json>"
 
 	app.Action = func(c *cli.Context) error {
 		fileName := "api.json"
 		if c.NArg() > 0 {
 			fileName = c.Args()[0]
 		}
-		if !jsonFile.FileExists(fileName) {
+		if jsonFile.FileExists(fileName) {
 			fmt.Println("File does not exists")
 			return nil
 		}
