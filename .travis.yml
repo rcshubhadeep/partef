@@ -1,0 +1,15 @@
+language: go
+go:
+  - 1.5.4
+  - 1.6.2
+  - tip
+
+matrix:
+  allow_faliures:
+    - go: tip
+
+before_install:
+  - mkdir -p bin
+
+script:
+  - go build
