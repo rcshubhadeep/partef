@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"partef/jsonFile"
+	"github.com/partef/jsonfile"
 
 	"github.com/urfave/cli"
 )
@@ -33,7 +33,7 @@ func main() {
 		if c.NArg() > 0 {
 			fileName = c.Args()[0]
 		}
-		if jsonFile.FileExists(fileName) {
+		if !jsonfile.FileExists(fileName) {
 			fmt.Println("File does not exists")
 			return nil
 		}

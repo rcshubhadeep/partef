@@ -1,8 +1,6 @@
 package jsonfile
 
-import (
-	"os"
-)
+import "os"
 
 // FileExists - function to test the existance of a file
 func FileExists(filePath string) bool {
