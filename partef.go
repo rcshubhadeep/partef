@@ -12,6 +12,7 @@ import (
 func main() {
 
 	var concReq int
+	var debug bool
 	app := cli.NewApp()
 
 	app.Flags = []cli.Flag{
@@ -20,6 +21,11 @@ func main() {
 			Value:       10,
 			Usage:       "Number of concurent requests",
 			Destination: &concReq,
+		},
+		cli.BoolFlag{
+			Name:        "debug, d",
+			Usage:       "Debug mode",
+			Destination: &debug,
 		},
 	}
 
@@ -36,6 +42,12 @@ func main() {
 		if !jsonfile.FileExists(fileName) {
 			fmt.Println("File does not exists")
 			return nil
+		}
+		err := jsonfile.ProcessAPIDesc(fileName, concReq)
+		if err != nil {
+			if debug {
+				fmt.Println(err.Error())
+			}
 		}
 		return nil
 	}
